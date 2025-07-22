@@ -169,7 +169,7 @@ def call_llama(messages, api_key):
         "stream": False
     }
     try:
-        r = requests.post(API_URL, headers=headers, json=data, timeout=60)
+        r = requests.post(DEFAULT_API_KEY, headers=headers, json=data, timeout=60)
         r.raise_for_status()
         return r.json()["choices"][0]["message"]["content"]
     except Exception as e:
